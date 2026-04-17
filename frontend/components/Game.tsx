@@ -43,8 +43,9 @@ export default function Game() {
   });
   const [leaderboard, setLeaderboard] = useState<LeaderboardRow[]>([]);
   const [loadError, setLoadError] = useState(false);
+  const [txError, setTxError] = useState<string | null>(null);
 
-  const { writeContract, data: hash, isPending } = useWriteContract();
+  const { writeContractAsync, data: hash, isPending } = useWriteContract();
   const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({ hash });
 
   const busy = isPending || isConfirming;
@@ -107,15 +108,22 @@ export default function Game() {
     }
   }
 
-  function handleGuess() {
-    if (!isConnected || busy) return;
+  async function handleGuess() {
+    if (!isConnected || !address || busy) return;
 
-    writeContract({
-      ...contractConfig,
-      functionName: "guess",
-      args: [BigInt(guess)],
-      ...(isMiniPay ? { feeCurrency: MINIPAY_FEE_CURRENCY } : {}),
-    } as Parameters<typeof writeContract>[0]);
+    setTxError(null);
+    try {
+      await writeContractAsync({
+        ...contractConfig,
+        account: address,
+        chainId: celo.id,
+        functionName: "guess",
+        args: [BigInt(guess)],
+        ...(isMiniPay ? { feeCurrency: MINIPAY_FEE_CURRENCY } : {}),
+      } as Parameters<typeof writeContractAsync>[0]);
+    } catch (error) {
+      setTxError(error instanceof Error ? error.message.slice(0, 180) : "Transaction rejected or failed.");
+    }
   }
 
   function setClampedGuess(value: number) {
@@ -192,6 +200,7 @@ export default function Game() {
               {loadError && (
                 <p className="text-sm text-coral">Contract data will load after deployment address is set.</p>
               )}
+              {txError && <p className="text-sm text-coral">{txError}</p>}
             </div>
           </div>
         </div>
