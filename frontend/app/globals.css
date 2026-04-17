@@ -46,3 +46,12 @@ input[type="range"] {
   backdrop-filter: blur(18px);
   border-radius: 8px;
 }
+
+/* radius: 1776460084251 */
+
+@keyframes hotGlow { 0%,100% { color: #ef4444; } 50% { color: #f97316; } }
+@keyframes coldGlow { 0%,100% { color: #3b82f6; } 50% { color: #06b6d4; } }
+.hot-indicator { animation: hotGlow 1s ease-in-out infinite; }
+.cold-indicator { animation: coldGlow 1s ease-in-out infinite; }
+
+html { scroll-behavior: smooth; }
