@@ -4,3 +4,5 @@ export const MIN_NUMBER = 1;
 export const MAX_NUMBER = 100;
 export const WIN_DISTANCE = 3;
 export const CELO_EXPLORER = "https://celoscan.io";
+
+// const: 1776460144516
