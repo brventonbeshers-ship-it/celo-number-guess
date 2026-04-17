@@ -53,3 +53,5 @@ input[type="range"] {
 @keyframes coldGlow { 0%,100% { color: #3b82f6; } 50% { color: #06b6d4; } }
 .hot-indicator { animation: hotGlow 1s ease-in-out infinite; }
 .cold-indicator { animation: coldGlow 1s ease-in-out infinite; }
+
+html { scroll-behavior: smooth; }
