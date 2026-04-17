@@ -1,15 +1,4 @@
-import { CeloNumberGuessClient } from "celo-number-guess-sdk";
-import { CELO_RPC, CONTRACT_ADDRESS } from "./config";
-export type { LeaderboardEntry, NumberGuessStats } from "celo-number-guess-sdk";
-
-const client = new CeloNumberGuessClient({
-  contractAddress: CONTRACT_ADDRESS,
-  rpcUrl: CELO_RPC,
-});
-
-export const getTotalGuesses = () => client.getTotalGuesses();
-export const getUserStats = (address: string) => client.getUserStats(address);
-export const getLeaderboard = () => client.getLeaderboard();
+import { CONTRACT_ADDRESS } from "./config";
 
 export const CELO_NUMBER_GUESS_ABI = [
   {
