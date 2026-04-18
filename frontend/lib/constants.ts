@@ -6,3 +6,5 @@ export const WIN_DISTANCE = 3;
 export const CELO_EXPLORER = "https://celoscan.io";
 
 // const: 1776460144516
+
+// const: 1776479810577
