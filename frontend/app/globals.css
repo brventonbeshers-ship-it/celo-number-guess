@@ -179,3 +179,12 @@ html { scroll-behavior: smooth; }
 /* shadow: 1776585294944 */
 
 /* opacity: 1776585402033 */
+
+/* radius: 1776585450028 */
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: rgba(168, 85, 247, 0.3); border-radius: 3px; }
+
+/* colors: 1776585457798 */
+
+/* transition: 1776585463318 */
