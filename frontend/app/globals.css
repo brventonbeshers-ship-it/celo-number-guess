@@ -394,3 +394,10 @@ html { scroll-behavior: smooth; }
 /* transition: 1776834455306 */
 
 /* font: 1776834474311 */
+
+/* font: 1776862967269 */
+
+/* opacity: 1776862974768 */
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: rgba(168, 85, 247, 0.3); border-radius: 3px; }
