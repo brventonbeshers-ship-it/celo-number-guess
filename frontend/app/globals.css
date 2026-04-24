@@ -564,3 +564,12 @@ html { scroll-behavior: smooth; }
 ::-webkit-scrollbar-thumb { background: rgba(168, 85, 247, 0.3); border-radius: 3px; }
 
 /* font: 1777066371003 */
+
+/* radius: 1777066406660 */
+
+/* transition: 1777066414219 */
+
+/* transform: 1777066418479 */
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: rgba(168, 85, 247, 0.3); border-radius: 3px; }
